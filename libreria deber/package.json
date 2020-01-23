@@ -1,0 +1,22 @@
+{
+  "name": "libreria-deber",
+  "version": "3.0.6",
+  "description": "Trabajo en clase",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "trabajo",
+    "en",
+    "clase",
+    "la",
+    "vieja",
+    "confiable"
+  ],
+  "author": "Daniel Garrido",
+  "license": "ISC"
+}

@@ -1,0 +1,1 @@
+const saludo = '\'Adios Mundo curel'';

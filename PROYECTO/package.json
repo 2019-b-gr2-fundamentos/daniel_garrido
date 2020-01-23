@@ -1,0 +1,14 @@
+{
+  "name": "proyecto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "empezar": "(tsc index.ts || echo) && node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lib-garrido2019": "1.1.5"
+  }
+}

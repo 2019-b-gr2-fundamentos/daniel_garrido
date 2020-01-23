@@ -1,0 +1,15 @@
+{
+  "name": "proyecto-advance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "libreria-deber": "^3.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "empezar": "node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
