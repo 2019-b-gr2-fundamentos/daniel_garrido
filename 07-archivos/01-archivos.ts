@@ -7,31 +7,31 @@ async function main(){
     let  contador = 0;
     const contenidoArchivo = leerArchivo(
         './ejemplo.txt'
-    );
-    const arregloCargadoArchivo = JSON.parse(contenidoArchivo); //transforma  de  texto to arreglos
-    const aregloEstudiantes : Estudiante[] = arregloCargadoArchivo;
-    const arregloPreguntas = [
-        {
-            type : 'text',
-            name : 'nombre',
-            message : 'ingresa tu nombre'
-    }
-];
-const respuestaEstudianteUno = await prompts(arregloPreguntas);
-const nuevoResgistroUno ={
-    id : contador,
-    nombre: respuestaEstudianteUno.nombre
-};
-contador ++;
-aregloEstudiantes.push(nuevoResgistroUno);
+        );
+        const arregloCargadoArchivo = JSON.parse(contenidoArchivo); //transforma  de  texto to arreglos
+        const aregloEstudiantes : Estudiante[] = arregloCargadoArchivo;
+        const arregloPreguntas = [
+            {
+                type : 'text',
+                name : 'nombre',
+                message : 'ingresa tu nombre'
+        }
+    ];
+        const respuestaEstudianteUno = await prompts(arregloPreguntas);
+        const nuevoResgistroUno ={
+            id : contador,
+            nombre: respuestaEstudianteUno.nombre
+            };
+    contador ++;
+    aregloEstudiantes.push(nuevoResgistroUno);
 
-const respuestaEstudianteDOs = await prompts(arregloPreguntas);
-const nuevoResgistroDos ={
-    id : contador,
-    nombre: respuestaEstudianteDOs.nombre
-};
-contador ++;
-aregloEstudiantes.push(nuevoResgistroDos);
+    const respuestaEstudianteDOs = await prompts(arregloPreguntas);
+        const nuevoResgistroDos ={
+            id : contador,
+            nombre: respuestaEstudianteDOs.nombre
+                };
+        contador ++;
+        aregloEstudiantes.push(nuevoResgistroDos);
 
 
 console.log('cual arreglo queires editar?')

@@ -1,0 +1,17 @@
+--->  /[a-g](?=a).\s/g  <-----
+
+En esta expresion regualar nos pide encontrar todas las veces que se forma "xa" donde x pertence al rango a-g
+es decir: ca da ga etc ademas el punto nos dice, cualquier personaje nuevo excepto nueava linea
+
+
+
+Ingreso los datos a y c
+Los multiplico 
+lo multiplico por 4
+ingreso b
+lo elevo al cuadrado
+lo resto de 4ac
+saco raiz
+le resto b
+lo divido para 2a
+
