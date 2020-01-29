@@ -1,0 +1,14 @@
+{
+  "name": "08-operadoires",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "start": "(tsc 01-main.ts || echo) && node 01-main.js"
+  },
+  "author": "daniel garrido",
+  "license": "ISC",
+  "dependencies": {
+    "tsc": "^1.20150623.0"
+  }
+}
