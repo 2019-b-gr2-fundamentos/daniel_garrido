@@ -1,3 +1,5 @@
+import { filter, map } from "./filter";
+
 function main(){
     const arregloEStudi:any = [
         {id:1, nombre:"adrian",nota:7},
@@ -68,7 +70,36 @@ const respuestaReduce =  arregloEStudi.reduce(
 console.log('la sumatoria de las notas es:',respuestaReduce)
 console.log('el promedio es:',respuestaReduce*arregloEStudi.lenght)
 
-}
+
+
+
+
+
+const repsuestaFilterNUestro = filter(
+    arregloEStudi,
+    function(valorActual,i,arreglo){
+    /*console.log('valor:',valorActual);
+    console.log('Indice:',i);
+    console.log('arreglo:',arreglo);*/
+    return valorActual.nota >= 7;
+        }
+    );
+
+console.log('respuesta filter:',repsuestaFilterNUestro)
+
+ 
+
+const respuestaMap = map(arregloEStudi,
+    function(valorActual,i,arreglo){
+        const nuevo ={
+            id:valorActual.id,
+            nombre:valorActual.nombre,
+            nota:valorActual.nota,
+            nota20: valorActual.nota *2
+        };
+    return nuevo
+    }
+
 
 /*
 operador - FOREACH
@@ -77,7 +108,7 @@ recibe-->nada
 
 Operador -- MAP 
 trandsformar el arreglo o mutar el arreglo
-Enviamos--> valoractual modificado
+Enviamos--> valor actual modificado
 Recibir --> nuevo arreglo con valores modifiados
 
 Filter ---> Filtra el arreglo
@@ -108,5 +139,5 @@ reduceright al contrario empieza al final hasta llegar al principio
 */
 
 
-
+}
 main();

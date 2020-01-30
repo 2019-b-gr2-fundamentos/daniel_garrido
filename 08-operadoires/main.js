@@ -1,3 +1,4 @@
+var filter_1 = require("./filter");
 function main() {
     var arregloEStudi = [
         { id: 1, nombre: "adrian", nota: 7 },
@@ -43,41 +44,57 @@ function main() {
     }, 0);
     console.log('la sumatoria de las notas es:', respuestaReduce);
     console.log('el promedio es:', respuestaReduce * arregloEStudi.lenght);
+    var repsuestaFilterNUestro = filter_1.filter(arregloEStudi, function (valorActual, i, arreglo) {
+        /*console.log('valor:',valorActual);
+        console.log('Indice:',i);
+        console.log('arreglo:',arreglo);*/
+        return valorActual.nota >= 7;
+    });
+    console.log('respuesta filter:', repsuestaFilterNUestro);
+    var respuestaMap = filter_1.map(arregloEStudi, function (valorActual, i, arreglo) {
+        var nuevo = {
+            id: valorActual.id,
+            nombre: valorActual.nombre,
+            nota: valorActual.nota,
+            nota20: valorActual.nota * 2
+        };
+        return nuevo;
+    });
+    /*
+    operador - FOREACH
+    envia--> nada
+    recibe-->nada
+    
+    Operador -- MAP
+    trandsformar el arreglo o mutar el arreglo
+    Enviamos--> valor actual modificado
+    Recibir --> nuevo arreglo con valores modifiados
+    
+    Filter ---> Filtra el arreglo
+    enviamos --> condicion
+    recibimos--->nuevo arreglo con los valores filtrados
+    
+    Or--->some (uno cumpla)
+    some ---> devuelve verdadero o falso dependiendo de la condicion
+            Si alguno cumple devuelve true
+            si ninguno cumple false
+    Enviamos ---> condicion
+    recibir---> boolean
+    
+    every --> devuelve V o F
+            Si todos cuimpen Verd
+            Si alguno no cumplio False
+            Enviamos ---> condicion
+    recibir---> boolean
+    
+    
+    
+    //reduce ---> devuelve un valor con un calculo aplicado
+    empieza su iteracion al inicio del arrglo hasta acabar el arreglo
+    enviamos un calculo
+    
+    reduceright al contrario empieza al final hasta llegar al principio
+    
+    */
 }
-/*
-operador - FOREACH
-envia--> nada
-recibe-->nada
-
-Operador -- MAP
-trandsformar el arreglo o mutar el arreglo
-Enviamos--> valoractual modificado
-Recibir --> nuevo arreglo con valores modifiados
-
-Filter ---> Filtra el arreglo
-enviamos --> condicion
-recibimos--->nuevo arreglo con los valores filtrados
-
-Or--->some (uno cumpla)
-some ---> devuelve verdadero o falso dependiendo de la condicion
-        Si alguno cumple devuelve true
-        si ninguno cumple false
-Enviamos ---> condicion
-recibir---> boolean
-
-every --> devuelve V o F
-        Si todos cuimpen Verd
-        Si alguno no cumplio False
-        Enviamos ---> condicion
-recibir---> boolean
-
-
-
-//reduce ---> devuelve un valor con un calculo aplicado
-empieza su iteracion al inicio del arrglo hasta acabar el arreglo
-enviamos un calculo
-
-reduceright al contrario empieza al final hasta llegar al principio
-
-*/
 main();
