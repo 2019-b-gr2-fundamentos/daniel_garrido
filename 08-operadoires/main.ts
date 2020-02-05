@@ -1,4 +1,5 @@
 import { filter, someNuevo} from "./filter";
+import { everyNuevo } from "./every";
 
 function main(){
     const arregloEStudi:any = [
@@ -96,6 +97,12 @@ console.log('respuesta nuestro filter:',repsuestaFilterNUestro)
 
 console.log('respuesta nuestro some',respuestaSomeNuevo)
 
+
+const respuestaMiEvery = everyNuevo(arregloEStudi,
+    function(valorActual,i,arreglo){
+        return valorActual.note < 11;
+    })
+console.log(respuestaMiEvery)
 /*
 operador - FOREACH
 envia--> nada

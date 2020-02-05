@@ -1,4 +1,5 @@
 var filter_1 = require("./filter");
+var every_1 = require("./every");
 function main() {
     var arregloEStudi = [
         { id: 1, nombre: "adrian", nota: 7 },
@@ -54,6 +55,10 @@ function main() {
         return valorActual.nota >= 11;
     });
     console.log('respuesta nuestro some', respuestaSomeNuevo);
+    var respuestaMiEvery = every_1.everyNuevo(arregloEStudi, function (valorActual, i, arreglo) {
+        return valorActual.note < 11;
+    });
+    console.log(respuestaMiEvery);
     /*
     operador - FOREACH
     envia--> nada

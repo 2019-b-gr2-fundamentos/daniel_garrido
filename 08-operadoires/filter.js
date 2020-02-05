@@ -30,7 +30,6 @@ function filter(arreglo, funcion) {
 }
 exports.filter = filter;
 function someNuevo(arreglo, funcion) {
-    var arregloFiltrado = [];
     for (var j = 0; j < arreglo.length; j++) {
         var respuestaFuncion = funcion(arreglo[j], j, arreglo);
         if (respuestaFuncion == true) {

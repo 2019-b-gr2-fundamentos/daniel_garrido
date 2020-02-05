@@ -63,3 +63,13 @@ export function someNuevo (arreglo:any[],
             }else {return false}
         }
 }
+
+
+
+
+
+
+
+
+
+
