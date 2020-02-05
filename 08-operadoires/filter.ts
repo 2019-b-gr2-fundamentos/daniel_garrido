@@ -49,26 +49,17 @@ export function filter(arreglo:any[],
     }
 
 
-export function map(arreglo:any[],
-    funcionRecibida:(
-        valorActual:any,
-        indice?:number,
-        arreglo?:any[]) =>
-    ):any[]{
-        //codigo
-        const arregloModificado = []
-        for(let i =0; i<=arreglo.length;i++){
-            const respuestaFuncion = funcionRecibida(
-                arreglo[i],
-                i,
+
+export function someNuevo (arreglo:any[],
+    funcion:(valorActual:any,indice?:number,arreglo?:any[]) => boolean):boolean {
+        for (let j = 0; j < arreglo.length; j++) {
+            const respuestaFuncion = funcion(
+                arreglo[j],
+                j,
                 arreglo
             );
-            if(respuestaFuncion[i]==arreglo[i]){
-                arregloModificado[i]==arreglo[i]
-            }else{
-                arregloModificado[i+1] == respuestaFuncion
-            }
+            if (respuestaFuncion == true){
+                return true
+            }else {return false}
         }
-    return arregloModificado
-    }
-   
+}

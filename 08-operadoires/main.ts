@@ -1,4 +1,4 @@
-import { filter, map } from "./filter";
+import { filter, someNuevo} from "./filter";
 
 function main(){
     const arregloEStudi:any = [
@@ -40,16 +40,16 @@ const respuestaFilter = arregloEStudi.filter(
 )
 console.log('respuesta filter',respuestaFilter);
 
+
 const respuestaOr = arregloEStudi.some(
     function(valorActual,id,arreglo){
         const condicion =  valorActual.nota <8;
         return condicion;
     }
 )
-console.log(respuestaOr);
+console.log('respuesta some :',respuestaOr);
 
 
-console.log('respuesta filter',respuestaFilter);
 
 const respuestaEvery = arregloEStudi.every(
     function(valorActual,id,arreglo){
@@ -57,7 +57,7 @@ const respuestaEvery = arregloEStudi.every(
         return condicion;
     }
 )
-console.log(respuestaEvery);
+console.log('repsuesta every',respuestaEvery);
 
 
 const respuestaReduce =  arregloEStudi.reduce(
@@ -85,21 +85,16 @@ const repsuestaFilterNUestro = filter(
         }
     );
 
-console.log('respuesta filter:',repsuestaFilterNUestro)
+console.log('respuesta nuestro filter:',repsuestaFilterNUestro)
 
- 
+ const respuestaSomeNuevo = someNuevo(
+     arregloEStudi,
+     function(valorActual,i,arreglo){
+         return valorActual.nota >= 11;
+     }
+ )
 
-const respuestaMap = map(arregloEStudi,
-    function(valorActual,i,arreglo){
-        const nuevo ={
-            id:valorActual.id,
-            nombre:valorActual.nombre,
-            nota:valorActual.nota,
-            nota20: valorActual.nota *2
-        };
-    return nuevo
-    }
-
+console.log('respuesta nuestro some',respuestaSomeNuevo)
 
 /*
 operador - FOREACH

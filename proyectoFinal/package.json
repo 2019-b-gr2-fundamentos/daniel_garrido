@@ -1,0 +1,15 @@
+{
+  "name": "proyectofinal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01-main.ts",
+  "scripts": {
+    "test": "(tsc 01-main.ts --target ES5||echo) && node 01-main.js",
+    "02": "(tsc 02-espacioBlanco.ts --target ES5||echo) && node 02-espacioBlanco.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prompts": "^2.3.0"
+  }
+}

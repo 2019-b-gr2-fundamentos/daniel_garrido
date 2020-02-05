@@ -31,13 +31,12 @@ function main() {
         var condicion = valorActual.nota < 8;
         return condicion;
     });
-    console.log(respuestaOr);
-    console.log('respuesta filter', respuestaFilter);
+    console.log('respuesta some :', respuestaOr);
     var respuestaEvery = arregloEStudi.every(function (valorActual, id, arreglo) {
         var condicion = valorActual.nota >= 4;
         return condicion;
     });
-    console.log(respuestaEvery);
+    console.log('repsuesta every', respuestaEvery);
     var respuestaReduce = arregloEStudi.reduce(function (acumulador, valorActual) {
         var calculo = acumulador + valorActual.nota;
         return calculo;
@@ -50,16 +49,11 @@ function main() {
         console.log('arreglo:',arreglo);*/
         return valorActual.nota >= 7;
     });
-    console.log('respuesta filter:', repsuestaFilterNUestro);
-    var respuestaMap = filter_1.map(arregloEStudi, function (valorActual, i, arreglo) {
-        var nuevo = {
-            id: valorActual.id,
-            nombre: valorActual.nombre,
-            nota: valorActual.nota,
-            nota20: valorActual.nota * 2
-        };
-        return nuevo;
+    console.log('respuesta nuestro filter:', repsuestaFilterNUestro);
+    var respuestaSomeNuevo = filter_1.someNuevo(arregloEStudi, function (valorActual, i, arreglo) {
+        return valorActual.nota >= 11;
     });
+    console.log('respuesta nuestro some', respuestaSomeNuevo);
     /*
     operador - FOREACH
     envia--> nada

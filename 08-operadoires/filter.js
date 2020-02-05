@@ -29,18 +29,16 @@ function filter(arreglo, funcion) {
     return arregloFiltrado;
 }
 exports.filter = filter;
-function map(arreglo, funcionRecibida) {
-    //codigo
-    var arregloModificado = [];
-    for (var i = 0; i <= arreglo.length; i++) {
-        var respuestaFuncion = funcionRecibida(arreglo[i], i, arreglo);
-        if (respuestaFuncion[i] == arreglo[i]) {
-            arregloModificado[i] == arreglo[i];
+function someNuevo(arreglo, funcion) {
+    var arregloFiltrado = [];
+    for (var j = 0; j < arreglo.length; j++) {
+        var respuestaFuncion = funcion(arreglo[j], j, arreglo);
+        if (respuestaFuncion == true) {
+            return true;
         }
         else {
-            arregloModificado[i + 1] == respuestaFuncion;
+            return false;
         }
     }
-    return arregloModificado;
 }
-exports.map = map;
+exports.someNuevo = someNuevo;
