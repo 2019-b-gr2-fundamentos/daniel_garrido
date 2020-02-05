@@ -36,38 +36,18 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var prompts = require("prompts");
-var _02_crear_1 = require("./02-crear");
-function actualizar(biblioteca) {
+var menu_1 = require("./menu");
+var escribirLeer_1 = require("./escribirLeer");
+function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var ISBrequerido, indice, nuevoLibro;
+        var libro, arregloLibro, arreglofinal;
         return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    console.log('Selecciona el ISBN del libro a actualizar:');
-                    console.log(biblioteca);
-                    return [4 /*yield*/, prompts({
-                            type: 'number',
-                            name: 'ISBN',
-                            message: 'Coloque el ISBN del libro',
-                            validate: function (value) { return typeof value != "number" ? 'solo numeros' : true; }
-                        })];
-                case 1:
-                    ISBrequerido = _a.sent();
-                    indice = biblioteca.findIndex(// Este me devuelve el indice del arreglo que cumple la condicion del return
-                    function (matrizLibro) {
-                        return matrizLibro.ISBN == ISBrequerido.ISBN;
-                    });
-                    console.log('a continuacion coloque la actualizacion del libro');
-                    return [4 /*yield*/, _02_crear_1.crearLibros(1)];
-                case 2:
-                    nuevoLibro = _a.sent();
-                    biblioteca[indice] = nuevoLibro[0];
-                    console.log('Este es el nuevo arreglo');
-                    console.log(biblioteca);
-                    return [2 /*return*/, biblioteca];
-            }
+            libro = escribirLeer_1.leerArchivo('./hi.txt');
+            arregloLibro = JSON.parse(libro);
+            arreglofinal = arregloLibro;
+            menu_1.menuuuuu(arreglofinal);
+            return [2 /*return*/];
         });
     });
 }
-exports.actualizar = actualizar;
+main().then().catch();

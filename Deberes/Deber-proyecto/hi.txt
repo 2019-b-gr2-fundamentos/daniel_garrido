@@ -1,0 +1,9 @@
+[
+    {
+    "Nombre":"Libro1",
+    "Autor":"Juan",
+    "ISBN":32,
+    "Editorial":"NPE",
+    "Color":"azul"
+    }
+]

@@ -1,8 +1,8 @@
 import { matrizLibro } from "./interfaces/matrizLibro.interface";
 import * as prompts from 'prompts'
-import { actualizar } from "./03-actualizar";
-import { eliminar } from "./04-borrar";
-import { buscarArray } from "./05-buscar";
+import { actualizar } from "./actualizar";
+import { eliminar } from "./borrar";
+import { buscarArray } from "./buscar";
 
 export async function menuuuuu (matriz:matrizLibro[]){
     const preguntas = {

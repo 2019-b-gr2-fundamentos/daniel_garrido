@@ -1,6 +1,6 @@
 import { matrizLibro } from "./interfaces/matrizLibro.interface";
 import * as prompts from "prompts";
-import { crearLibros } from "./02-crear";
+import { crearLibros } from "./crear";
 
 
 export async function actualizar(biblioteca:matrizLibro[]){

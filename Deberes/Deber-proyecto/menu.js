@@ -37,9 +37,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var prompts = require("prompts");
-var _03_actualizar_1 = require("./03-actualizar");
-var _04_borrar_1 = require("./04-borrar");
-var _05_buscar_1 = require("./05-buscar");
+var actualizar_1 = require("./actualizar");
+var borrar_1 = require("./borrar");
+var buscar_1 = require("./buscar");
 function menuuuuu(matriz) {
     return __awaiter(this, void 0, void 0, function () {
         var preguntas, hi, matrizactualizada, matrizNueva, elemnto, preguntaUnlibro, nuevoLIBRO;
@@ -64,21 +64,21 @@ function menuuuuu(matriz) {
                 case 1:
                     hi = _a.sent();
                     if (!(hi.menu == 0)) return [3 /*break*/, 3];
-                    return [4 /*yield*/, _03_actualizar_1.actualizar(matriz)];
+                    return [4 /*yield*/, actualizar_1.actualizar(matriz)];
                 case 2:
                     matrizactualizada = _a.sent();
                     menuuuuu(matrizactualizada);
                     return [3 /*break*/, 10];
                 case 3:
                     if (!(hi.menu == 1)) return [3 /*break*/, 5];
-                    return [4 /*yield*/, _04_borrar_1.eliminar(matriz)];
+                    return [4 /*yield*/, borrar_1.eliminar(matriz)];
                 case 4:
                     matrizNueva = _a.sent();
                     menuuuuu(matrizNueva);
                     return [3 /*break*/, 10];
                 case 5:
                     if (!(hi.menu == 2)) return [3 /*break*/, 7];
-                    return [4 /*yield*/, _05_buscar_1.buscarArray(matriz)];
+                    return [4 /*yield*/, buscar_1.buscarArray(matriz)];
                 case 6:
                     elemnto = _a.sent();
                     menuuuuu(matriz);

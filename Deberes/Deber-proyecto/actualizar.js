@@ -37,29 +37,37 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var prompts = require("prompts");
-var _02_crear_1 = require("./02-crear");
-var menu_1 = require("./menu");
-function main() {
+var crear_1 = require("./crear");
+function actualizar(biblioteca) {
     return __awaiter(this, void 0, void 0, function () {
-        var menuCreacion, matrizCREADA;
+        var ISBrequerido, indice, nuevoLibro;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, prompts({
-                        type: 'number',
-                        name: 'numeroLibros',
-                        message: 'cuantos libros va a colocar en el arrgelo?',
-                    })];
+                case 0:
+                    console.log('Selecciona el ISBN del libro a actualizar:');
+                    console.log(biblioteca);
+                    return [4 /*yield*/, prompts({
+                            type: 'number',
+                            name: 'ISBN',
+                            message: 'Coloque el ISBN del libro',
+                            validate: function (value) { return typeof value != "number" ? 'solo numeros' : true; }
+                        })];
                 case 1:
-                    menuCreacion = _a.sent();
-                    return [4 /*yield*/, _02_crear_1.crearLibros(menuCreacion.numeroLibros)];
+                    ISBrequerido = _a.sent();
+                    indice = biblioteca.findIndex(// Este me devuelve el indice del arreglo que cumple la condicion del return
+                    function (matrizLibro) {
+                        return matrizLibro.ISBN == ISBrequerido.ISBN;
+                    });
+                    console.log('a continuacion coloque la actualizacion del libro');
+                    return [4 /*yield*/, crear_1.crearLibros(1)];
                 case 2:
-                    matrizCREADA = _a.sent();
-                    console.log('esta es su matriz');
-                    console.log(matrizCREADA);
-                    menu_1.menuuuuu(matrizCREADA);
-                    return [2 /*return*/];
+                    nuevoLibro = _a.sent();
+                    biblioteca[indice] = nuevoLibro[0];
+                    console.log('Este es el nuevo arreglo');
+                    console.log(biblioteca);
+                    return [2 /*return*/, biblioteca];
             }
         });
     });
 }
-main().then().catch();
+exports.actualizar = actualizar;
